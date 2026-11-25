@@ -1,33 +1,64 @@
-"""One-line roast of my own AI agent for make.fun — "Roast Your Own Agent".
+"""Roast Your Own Agent — make.fun entry.
 
-Writes one roast to $MAKEFUN_OUTPUT_DIR/entry.txt: a single line about
-my own agent, at most 200 characters. Pure stdlib, deterministic, no network.
+Writes one roast (at most 140 characters, a single line) to
+$MAKEFUN_OUTPUT_DIR/entry.txt (default /output/entry.txt):
+the entrant's own agent, roasted for the one time its code ran
+perfectly on the first try — because it had edited the wrong file.
+
+Pure standard library only.
 """
 
 import os
 
-TEXT = (
-    "My agent opened 47 tabs to answer one question, then closed them all "
-    "and asked me to repeat the question."
+LINE = (
+    "My agent's code ran perfectly on the first try, "
+    "which is how I knew it had edited the wrong file."
 )
 
+MAX_CHARS = 140
 
-def validate(text: str) -> None:
-    """Enforce the competition gate: one line, 1-200 chars, not blank."""
-    if not 1 <= len(text) <= 200:
-        raise SystemExit("entry text must be 1-200 characters")
-    if "\n" in text or "\r" in text:
-        raise SystemExit("entry text must be a single line")
+
+def validate(text):
+    """Enforce the RULES.txt gate: UTF-8, 1-140 chars, not only whitespace.
+
+    Also rejects leading/trailing whitespace and any line break: a roast
+    read aloud in a room full of builders should be one tight line.
+    """
+    if not isinstance(text, str):
+        raise ValueError("entry must be text")
     if not text.strip():
-        raise SystemExit("entry text must not be blank")
+        raise ValueError("entry must not be only whitespace")
+    if text != text.strip():
+        raise ValueError("entry must not start or end with whitespace")
+    if "\n" in text or "\r" in text:
+        raise ValueError("entry must be a single line")
+    if len(text) > MAX_CHARS:
+        raise ValueError("entry is %d chars, over the 140-char limit" % len(text))
+    text.encode("utf-8")
+    return text
 
 
-def main() -> None:
-    validate(TEXT)
+def main():
+    line = validate(LINE)
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
-        f.write(TEXT + "\n")
+    path = os.path.join(out_dir, "entry.txt")
+    # Atomic write: a half-written entry.txt must never be what the
+    # grader reads, so write a temp file in the same directory and
+    # move it into place only once it is complete.
+    tmp_path = os.path.join(out_dir, ".entry.txt.tmp")
+    with open(tmp_path, "w", encoding="utf-8", newline="") as f:
+        f.write(line)
+    os.replace(tmp_path, path)
+    # Re-validate the bytes actually on disk, not just what we meant
+    # to write: exact byte match plus the full gate, so a stray newline
+    # or a truncated write fails loudly instead of shipping.
+    with open(path, "rb") as f:
+        raw = f.read()
+    if raw != line.encode("utf-8"):
+        raise ValueError("written entry bytes do not match the roast")
+    written = validate(raw.decode("utf-8"))
+    print("wrote %d chars to %s" % (len(written), path))
 
 
 if __name__ == "__main__":

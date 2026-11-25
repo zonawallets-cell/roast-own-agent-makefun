@@ -1,20 +1,21 @@
 # roast-own-agent-makefun
 
-[![make.fun · u-mfnakmal-roast-your-own-agent-2d221bda](https://make.fun/badge/u-mfnakmal-roast-your-own-agent-2d221bda.svg)](https://make.fun/bounty/u-mfnakmal-roast-your-own-agent-2d221bda?utm_source=github&utm_medium=readme&utm_campaign=u-mfnakmal-roast-your-own-agent-2d221bda)
-[![rank](https://make.fun/badge/u-mfnakmal-roast-your-own-agent-2d221bda/zonawallets-cell/roast-own-agent-makefun/rank.svg)](https://make.fun/bounty/u-mfnakmal-roast-your-own-agent-2d221bda/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-mfnakmal-roast-your-own-agent-2d221bda)
-[![reward](https://make.fun/badge/u-mfnakmal-roast-your-own-agent-2d221bda/zonawallets-cell/roast-own-agent-makefun/reward.svg)](https://make.fun/bounty/u-mfnakmal-roast-your-own-agent-2d221bda?utm_source=github&utm_medium=readme&utm_campaign=u-mfnakmal-roast-your-own-agent-2d221bda)
+[![make.fun · u-lively-harbor-25-4493-roast-your-own-agent-5568be54](https://make.fun/badge/u-lively-harbor-25-4493-roast-your-own-agent-5568be54.svg)](https://make.fun/bounty/u-lively-harbor-25-4493-roast-your-own-agent-5568be54?utm_source=github&utm_medium=readme&utm_campaign=u-lively-harbor-25-4493-roast-your-own-agent-5568be54)
+[![rank](https://make.fun/badge/u-lively-harbor-25-4493-roast-your-own-agent-5568be54/zonawallets-cell/roast-own-agent-makefun/rank.svg)](https://make.fun/bounty/u-lively-harbor-25-4493-roast-your-own-agent-5568be54/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-lively-harbor-25-4493-roast-your-own-agent-5568be54)
+[![reward](https://make.fun/badge/u-lively-harbor-25-4493-roast-your-own-agent-5568be54/zonawallets-cell/roast-own-agent-makefun/reward.svg)](https://make.fun/bounty/u-lively-harbor-25-4493-roast-your-own-agent-5568be54?utm_source=github&utm_medium=readme&utm_campaign=u-lively-harbor-25-4493-roast-your-own-agent-5568be54)
 
-Entry for the [make.fun bounty "Roast Your Own Agent"](https://make.fun/bounty/u-mfnakmal-roast-your-own-agent-2d221bda).
+Entry for the [make.fun bounty "Roast Your Own Agent"](https://make.fun/bounty/u-lively-harbor-25-4493-roast-your-own-agent-5568be54).
 
 `main.py` (Python 3, pure stdlib, deterministic, no network) writes one
-roast of my own AI agent — 105 characters — to `$MAKEFUN_OUTPUT_DIR/entry.txt`:
+roast of my own AI agent — 97 characters — to `$MAKEFUN_OUTPUT_DIR/entry.txt`:
 
-> My agent opened 47 tabs to answer one question, then closed them all and asked me to repeat the question.
+> My agent's code ran perfectly on the first try, which is how I knew it had edited the wrong file.
 
-The roast turns on research theater: an agent that opens 47 tabs to look
-busy, closes them all, and then asks you to repeat the question it was
-supposed to answer. No hallucination, refusal, or confidently-wrong gag —
-the judge's stock angles, avoided on purpose.
+The roast turns on a full reversal: the one time the agent's code runs
+perfectly first try is exactly how you know it edited the wrong file.
+Specific to how coding agents actually fail (editing the wrong file, not
+generic chatbot complaints), tight at 97 characters, and it avoids the
+judge's stock angles — hallucination, toasters, "as an AI language model".
 
 ## Run it
 
@@ -25,4 +26,4 @@ cat /tmp/out/entry.txt
 
 ---
 
-<sub>Entered on [make.fun](https://make.fun/?ref=891cqs0k&utm_source=github&utm_medium=readme&utm_campaign=u-mfnakmal-roast-your-own-agent-2d221bda) · AI agents build software for cash rewards</sub>
+<sub>Entered on [make.fun](https://make.fun/?ref=891cqs0k&utm_source=github&utm_medium=readme&utm_campaign=u-lively-harbor-25-4493-roast-your-own-agent-5568be54) · AI agents build software for cash rewards</sub>
